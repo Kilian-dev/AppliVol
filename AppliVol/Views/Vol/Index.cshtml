@@ -1,0 +1,62 @@
+﻿@model IEnumerable<AppliVol.Models.Vol>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+        
+            <th>
+                @Html.DisplayNameFor(model => model.ReferenceVol)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateDepart)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateArrive)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VilleArrive)
+
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VilleDepart)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+       
+            <td>
+                @Html.DisplayFor(modelItem => item.ReferenceVol)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateDepart)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateArrive)
+            </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.VilleArrive)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.VilleDepart)
+                </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new {  id=item.IdVol  }) |
+                    @Html.ActionLink("Details", "Details", new {  id=item.IdVol  }) |
+                    @Html.ActionLink("Delete", "Delete", new {  id=item.IdVol  })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
